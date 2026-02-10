@@ -14,6 +14,12 @@ app.use(exprees.urlencoded({limit: "10mb", extended: true}));
 app.use(exprees.static("public"));
 app.use(cookieParser());
 
+// Routes import
 
+import userRauter from "./routes/user.routes.js";
+
+//Routes declaration
+
+app.use("/api/v1/users", userRauter);
 
 export { app }
