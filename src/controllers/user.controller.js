@@ -174,8 +174,9 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 const refreshAccessToken = asyncHandler(async (req, res) => {
   const incomingRefreshToken =
-    req.cookies.refreshToken || req.body.refreshToken;
-  if (!incomingRefreshToken) {
+    req.cookies.refreshToken || req.body.refreshToken
+    
+    if (!incomingRefreshToken) {
     throw new apiError(400, "Unauthorized error, refresh token is required");
   }
 
